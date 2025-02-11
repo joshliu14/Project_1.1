@@ -1,0 +1,78 @@
+
+
+CREATE TABLE  MotionPicture 
+(id INT NOT NULL, 
+name CHAR(100) NOT NULL, 
+rating (FLOAT), 
+budget INT, 
+PRIMARY KEY id, 
+CHECK CONSTRAINT (Rating >= 0 AND Rating <= 10 AND budget > 0),)
+
+
+
+CREATE TABLE User 
+(email CHAR(50),
+name Char(50), 
+age SmallInt,
+PRIMARY KEY email)
+
+CREATE TABLE Likes 
+(uemail Char(50),
+mpid CHAR(50),
+FOREIGN KEY uemail REFERENCES(User.email),
+FOREIGN KEY mpid REFERENCES(MotionPicture.id),
+PRIMARY KEY (uemail, mpid)
+)
+
+CREATE TABLE Movie 
+(mpid INT UNIQUE,
+boxoffice_collection FLOAT, 
+FOREIGN KEY mpid REFERENCES (MotionPicture.id),
+CHECK CONSTRAINT (boxoffice_collection > 0)
+PRIMARY KEY mpid)
+
+CREATE TABLE Series 
+(mpid INT UNIQUE,
+season_count INT NOT NULL,
+FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
+CHECK CONSTRAINT (season_count >=1) 
+PRIMARY KEY mpid)
+
+CREATE TABLE people 
+(id INT, 
+name char(50),
+nationality char(50),
+dob  DATE,
+gender CHAR(1)
+PRIMARY KEY id);
+
+CREATE TABLE Role 
+(mpid INT, 
+pid INT, 
+role_name CHAR(30),
+FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE, 
+FOREIGN KEY pid REFERENCES (people.id) ON DELETE CASCADE,
+PRIMARY KEY (mpid, pid))
+
+CREATE TABLE Award
+(mpid INT, 
+pid INT, 
+award_name CHAR(50), 
+award_year YEAR,
+FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
+FOREIGN KEY pid REFERENCES (People.id) ON DELETE CASCADE,
+PRIMARY KEY (mpid, pid, award_name, award_year))
+
+CREATE TABLE Genre
+(mpid INT,
+genre_name CHAR(50), 
+FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
+PRIMARY KEY (mpid, genre_name))
+
+CREATE TABLE Location
+(mpid INT, 
+zip INT, 
+city CHAR 50, 
+country CHAR 50, 
+FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
+PRIMARY KEY (mpid, zip))
