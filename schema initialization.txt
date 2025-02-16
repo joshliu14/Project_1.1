@@ -11,7 +11,7 @@ CHECK (Rating >= 0 AND Rating <= 10 AND budget > 0))
 
 
 
-CREATE TABLE User 
+CREATE TABLE Users 
 (email VARCHAR(255),
 name VARCHAR(255), 
 age SmallInt,
@@ -20,7 +20,7 @@ PRIMARY KEY (email));
 CREATE TABLE Likes 
 (uemail VARCHAR(255), 
 mpid INT , 
-FOREIGN KEY (uemail) REFERENCES User(email) ON DELETE CASCADE, 
+FOREIGN KEY (uemail) REFERENCES Users(email) ON DELETE CASCADE, 
 FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE, 
 PRIMARY KEY (uemail, mpid)
 );
