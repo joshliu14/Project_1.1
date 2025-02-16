@@ -52,7 +52,7 @@ pid INT,
 role_name CHAR(30),
 FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE, 
 FOREIGN KEY pid REFERENCES (people.id) ON DELETE CASCADE,
-PRIMARY KEY (mpid, pid))
+PRIMARY KEY (mpid, pid, role_name))
 
 CREATE TABLE Award
 (mpid INT, 
