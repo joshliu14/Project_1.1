@@ -2,8 +2,9 @@
 
 CREATE TABLE  MotionPicture 
 (id INT NOT NULL, 
-name CHAR(100) NOT NULL, 
+name VARCHAR(255) NOT NULL, 
 rating (FLOAT), 
+production VARCHAR(255)
 budget INT, 
 PRIMARY KEY id, 
 CHECK (Rating >= 0 AND Rating <= 10 AND budget > 0))
@@ -11,28 +12,28 @@ CHECK (Rating >= 0 AND Rating <= 10 AND budget > 0))
 
 
 CREATE TABLE User 
-(email CHAR(50),
-name Char(50), 
+(email VARCHAR(255),
+name VARCHAR(255), 
 age SmallInt,
 PRIMARY KEY email)
 
 CREATE TABLE Likes 
-(uemail Char(50),
-mpid CHAR(50),
+(uemail VARCHAR(255),
+mpid VARCHAR(255),
 FOREIGN KEY uemail REFERENCES(User.email),
 FOREIGN KEY mpid REFERENCES(MotionPicture.id),
 PRIMARY KEY (uemail, mpid)
 )
 
 CREATE TABLE Movie 
-(mpid INT UNIQUE,
+(mpid INT,
 boxoffice_collection FLOAT, 
 FOREIGN KEY mpid REFERENCES (MotionPicture.id),
-CHECK (boxoffice_collection > 0),
+CHECK (boxoffice_collection >= 0),
 PRIMARY KEY mpid)
 
 CREATE TABLE Series 
-(mpid INT UNIQUE,
+(mpid INT,
 season_count INT NOT NULL,
 FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
 CHECK (season_count >=1), 
@@ -40,8 +41,8 @@ PRIMARY KEY mpid)
 
 CREATE TABLE people 
 (id INT, 
-name char(50),
-nationality char(50),
+name VARCHAR(255),
+nationality VARCHAR(255),
 dob  DATE,
 gender CHAR(1)
 PRIMARY KEY id);
@@ -49,7 +50,7 @@ PRIMARY KEY id);
 CREATE TABLE Role 
 (mpid INT, 
 pid INT, 
-role_name CHAR(30),
+role_name VARCHAR(255),
 FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE, 
 FOREIGN KEY pid REFERENCES (people.id) ON DELETE CASCADE,
 PRIMARY KEY (mpid, pid, role_name))
@@ -57,7 +58,7 @@ PRIMARY KEY (mpid, pid, role_name))
 CREATE TABLE Award
 (mpid INT, 
 pid INT, 
-award_name CHAR(50), 
+award_name VARCHAR(255), 
 award_year YEAR,
 FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
 FOREIGN KEY pid REFERENCES (People.id) ON DELETE CASCADE,
@@ -65,14 +66,14 @@ PRIMARY KEY (mpid, pid, award_name, award_year))
 
 CREATE TABLE Genre
 (mpid INT,
-genre_name CHAR(50), 
+genre_name VARCHAR(255), 
 FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
 PRIMARY KEY (mpid, genre_name))
 
 CREATE TABLE Location
 (mpid INT, 
 zip INT, 
-city CHAR 50, 
-country CHAR 50, 
+city VARCHAR(255), 
+country VARCHAR(255), 
 FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
 PRIMARY KEY (mpid, zip))
