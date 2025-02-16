@@ -6,7 +6,7 @@ name CHAR(100) NOT NULL,
 rating (FLOAT), 
 budget INT, 
 PRIMARY KEY id, 
-CHECK CONSTRAINT (Rating >= 0 AND Rating <= 10 AND budget > 0),)
+CHECK (Rating >= 0 AND Rating <= 10 AND budget > 0))
 
 
 
@@ -28,14 +28,14 @@ CREATE TABLE Movie
 (mpid INT UNIQUE,
 boxoffice_collection FLOAT, 
 FOREIGN KEY mpid REFERENCES (MotionPicture.id),
-CHECK CONSTRAINT (boxoffice_collection > 0)
+CHECK (boxoffice_collection > 0),
 PRIMARY KEY mpid)
 
 CREATE TABLE Series 
 (mpid INT UNIQUE,
 season_count INT NOT NULL,
 FOREIGN KEY mpid REFERENCES (MotionPicture.id) ON DELETE CASCADE,
-CHECK CONSTRAINT (season_count >=1) 
+CHECK (season_count >=1), 
 PRIMARY KEY mpid)
 
 CREATE TABLE people 
