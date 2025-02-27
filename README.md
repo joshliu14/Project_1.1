@@ -20,7 +20,6 @@ The project is structured to learn SQL by implementing queries and database inte
 ---
 
 ## **2. Project Setup Instructions**
-Then run:
 
 ### **Step 1: Install and Configure MariaDB**
 1. **Installation**  
@@ -38,7 +37,6 @@ Then run:
       ```
     - **Windows**  
       Download and install from [MariaDB Official Website](https://mariadb.org/).
-This will populate the database with the given data.
 
 2. **Start MariaDB Server**
    ```bash
@@ -48,7 +46,6 @@ This will populate the database with the given data.
    # Linux
    sudo systemctl start mariadb
    ```
-Then install requirements:
 
    *(For Windows, the service starts automatically after installation.)*
 '''pip install -r requirements.txt'''
@@ -58,7 +55,6 @@ Then install requirements:
    ```bash
    mysql -u root -p
    ```
-Then run the application:
 
    Inside MySQL, run the following:
    > **NOTE**: Below commands must be run in your MySQL shell inside terminal.
