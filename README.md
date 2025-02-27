@@ -6,7 +6,7 @@ This project was created from [YourOwnIMDb](https://github.com/SSD-Brandeis/Your
 
 ## Running the Project
 
-To run the project, first download mariaDB:
+To run the project, first download MariaDB:
 
 For Mac:
 
@@ -23,7 +23,7 @@ sudo apt install mariadb-server
 For Windows:
 Download and install from [MariaDB Official Website](https://mariadb.org/)
 
-then start mariadb server:
+Then start MariaDB server:
 
 ```
 # MacOS
@@ -33,12 +33,14 @@ brew services start mariadb
 sudo systemctl start mariadb
 ```
 
-then run:
+Then run:
 
 ```
 mysql -u root -p
 ```
-and then inside mariadb run:
+It will ask for a password. If installing MariaDB for the first time, just hit enter. Otherwise give the password you set. If that still does not work, try [resetting your root password](https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mariadb-root-password).
+
+Then inside MariaDB run:
 
 ```
 CREATE DATABASE moviedb;
@@ -50,7 +52,7 @@ GRANT ALL PRIVILEGES ON moviedb.* TO 'imdb'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-Go to the root directory of this project and run the following command:
+Exit and go to the root directory of this project and run the following command:
 
 ```
 mysql -u root -p < schema_initialization.sql
