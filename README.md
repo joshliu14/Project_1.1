@@ -6,7 +6,24 @@ This project was created from [YourOwnIMDb](https://github.com/SSD-Brandeis/Your
 
 ## Running the Project
 
-To run the project, set up mariaDB according to the directions in [YourOwnIMDb](https://github.com/SSD-Brandeis/YourOwnIMDb) as well as the Programming Assignment 1.1 document.
+To run the project, download mariaDB according to the directions in [YourOwnIMDb](https://github.com/SSD-Brandeis/YourOwnIMDb) and the Programming Assignment 1.1 document.
+
+Run:
+
+```mysql -u root -p```
+
+and then inside mariadb run:
+
+```
+CREATE DATABASE moviedb;
+
+CREATE USER 'imdb'@'localhost' IDENTIFIED BY 'cosi-127b';
+
+GRANT ALL PRIVILEGES ON moviedb.* TO 'imdb'@'localhost';
+
+FLUSH PRIVILEGES;
+```
+
 Go to the root directory of this project and run the following command:
 
 ```mysql -u root -p < schema_initialization.txt```
