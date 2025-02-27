@@ -15,7 +15,7 @@ The project is structured to learn SQL by implementing queries and database inte
 - **Flask** (for the web framework)
 - **PyMySQL** (for database connectivity)
 - **All dependencies from `requirements.txt`**
-'''mysql -u root -p < schema_initialization.txt'''
+'''mysql -u root -p < schema_initialization.sql'''
 
 ---
 This will create the database moviedb and populate it with the necessary tables.
