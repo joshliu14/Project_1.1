@@ -6,7 +6,7 @@ This project was created from [YourOwnIMDb](https://github.com/SSD-Brandeis/Your
 
 ## Running the Project
 
-To run the project, first download MariaDB:
+To run the project, [clone the project](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) and download MariaDB:
 
 For Mac:
 
