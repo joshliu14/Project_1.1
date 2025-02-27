@@ -20,8 +20,7 @@ CREATE TABLE Likes
 mpid INT, 
 FOREIGN KEY (uemail) REFERENCES Users(email) ON DELETE CASCADE, 
 FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE, 
-PRIMARY KEY (uemail, mpid)
-);
+PRIMARY KEY (uemail, mpid));
 
 CREATE TABLE Movie 
 (mpid INT,
