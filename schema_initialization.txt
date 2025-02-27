@@ -1,4 +1,6 @@
+CREATE DATABASE moviedb;
 
+USE moviedb;
 
 CREATE TABLE  MotionPicture 
 (id INT, 
@@ -9,8 +11,6 @@ budget INT,
 PRIMARY KEY (id), 
 CHECK (rating >= 0 AND rating <= 10 AND budget > 0));
 
-
-
 CREATE TABLE Users 
 (email VARCHAR(255),
 name VARCHAR(255), 
@@ -19,7 +19,7 @@ PRIMARY KEY (email));
 
 CREATE TABLE Likes 
 (uemail VARCHAR(255), 
-mpid INT , 
+mpid INT, 
 FOREIGN KEY (uemail) REFERENCES Users(email) ON DELETE CASCADE, 
 FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE, 
 PRIMARY KEY (uemail, mpid)
