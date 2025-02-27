@@ -13,11 +13,12 @@ Run:
 ```
 mysql -u root -p
 ```
-
 and then inside mariadb run:
 
 ```
 CREATE DATABASE moviedb;
+
+DROP USER 'imdb'@'localhost';
 
 CREATE USER 'imdb'@'localhost' IDENTIFIED BY 'cosi-127b';
 
