@@ -4,10 +4,10 @@ CREATE TABLE  MotionPicture
 (id INT, 
 name VARCHAR(255) NOT NULL, 
 rating FLOAT, 
-production VARCHAR(255)
+production VARCHAR(255),
 budget INT, 
 PRIMARY KEY (id), 
-CHECK (Rating >= 0 AND Rating <= 10 AND budget > 0))
+CHECK (rating >= 0 AND rating <= 10 AND budget > 0))
 
 
 
