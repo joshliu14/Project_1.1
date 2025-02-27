@@ -7,7 +7,7 @@ rating FLOAT,
 production VARCHAR(255),
 budget INT, 
 PRIMARY KEY (id), 
-CHECK (rating >= 0 AND rating <= 10 AND budget > 0))
+CHECK (rating >= 0 AND rating <= 10 AND budget > 0));
 
 
 
