@@ -38,7 +38,26 @@ Then run:
 ```
 mysql -u root -p
 ```
-It will ask for a password. If installing MariaDB for the first time, just hit enter. Otherwise give the password you set. If that still does not work, try [resetting your root password](https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mariadb-root-password).
+It will ask for a password. If installing MariaDB for the first time, just hit enter. Otherwise give the password you set. If that still does not work, try to get into MariaDB with:
+```
+mariadb
+```
+or
+```
+mysql
+```
+or
+```
+sudo mysql -u root -p
+```
+and then run:
+```
+GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' IDENTIFIED BY '<password>';
+FLUSH PRIVILEGES;
+```
+where <password> is of your choosing.
+
+If that still doesn't work, try [this](https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mariadb-root-password).
 
 Then inside MariaDB run:
 
