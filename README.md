@@ -6,9 +6,34 @@ This project was created from [YourOwnIMDb](https://github.com/SSD-Brandeis/Your
 
 ## Running the Project
 
-To run the project, download mariaDB according to the directions in [YourOwnIMDb](https://github.com/SSD-Brandeis/YourOwnIMDb) and the Programming Assignment 1.1 document.
+To run the project, first download mariaDB:
 
-Run:
+For Mac:
+
+```
+brew install mariadb
+```
+
+For Ubuntu/Debian:
+
+```
+sudo apt install mariadb-server
+```
+
+For Windows:
+Download and install from [MariaDB Official Website](https://mariadb.org/)
+
+then start mariadb server:
+
+```
+# MacOS
+brew services start mariadb
+
+# Linux
+sudo systemctl start mariadb
+```
+
+then run:
 
 ```
 mysql -u root -p
@@ -31,7 +56,7 @@ Go to the root directory of this project and run the following command:
 mysql -u root -p < schema_initialization.sql
 ```
 
-This will create the database moviedb and populate it with the necessary tables.
+This will populate moviedb with the necessary tables.
 
 Then run:
 
