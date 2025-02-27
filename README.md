@@ -55,7 +55,7 @@ and then run:
 GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' IDENTIFIED BY '<password>';
 FLUSH PRIVILEGES;
 ```
-where <password> is of your choosing.
+where password is of your choosing.
 
 If that still doesn't work, try [this](https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mariadb-root-password).
 
