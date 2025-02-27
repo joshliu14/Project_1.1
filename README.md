@@ -26,7 +26,7 @@ FLUSH PRIVILEGES;
 
 Go to the root directory of this project and run the following command:
 
-```mysql -u root -p < schema_initialization.txt```
+```mysql -u root -p < schema_initialization.sql```
 
 This will create the database moviedb and populate it with the necessary tables.
 
