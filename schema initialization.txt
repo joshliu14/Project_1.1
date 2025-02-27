@@ -35,11 +35,11 @@ PRIMARY KEY (mpid));
 CREATE TABLE Series 
 (mpid INT,
 season_count INT,
-FOREIGN KEY mpid REFERENCES MOtionPicture(id) ON DELETE CASCADE, 
+FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE, 
 CHECK (season_count >=1), 
-PRIMARY KEY (mpid))
+PRIMARY KEY (mpid));
 
-CREATE TABLE people 
+CREATE TABLE People 
 (id INT, 
 name VARCHAR(255),
 nationality VARCHAR(255),
@@ -52,8 +52,8 @@ CREATE TABLE Role
 pid INT, 
 role_name VARCHAR(255),
 FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE, 
-FOREIGN KEY (pid) REFERENCES people(id) ON DELETE CASCADE,
-PRIMARY KEY (mpid, pid, role_name))
+FOREIGN KEY (pid) REFERENCES People(id) ON DELETE CASCADE,
+PRIMARY KEY (mpid, pid, role_name));
 
 CREATE TABLE Award
 (mpid INT, 
