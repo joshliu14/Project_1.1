@@ -18,8 +18,6 @@ and then inside mariadb run:
 ```
 CREATE DATABASE moviedb;
 
-DROP USER 'imdb'@'localhost';
-
 CREATE USER 'imdb'@'localhost' IDENTIFIED BY 'cosi-127b';
 
 GRANT ALL PRIVILEGES ON moviedb.* TO 'imdb'@'localhost';
