@@ -42,24 +42,11 @@ def like_movie():
     #    - How `execute` handles SQL queries.
     #    - Why we pass `params` as a tuple (movie_id, user_email).
     #    - The role of `commit=True` in saving changes.
-    
-    # Query to check if the email exists
-    query_check_email = """SELECT 1 FROM Users WHERE email = %s;"""
-
-    # Query to insert email if it doesn't exist
-    query_insert_email = """INSERT INTO Users (email) VALUES (%s);"""
 
     query = """INSERT INTO Likes (mpid, uemail) VALUES (%s, %s);"""
 
     with Database() as db:
         try:
-            # Check if the email exists
-            existing_email = db.execute(query_check_email, (user_email,))
-            
-            # If email does not exist, insert it
-            if not existing_email:
-                db.execute(query_insert_email, (user_email,), commit=True)
-
             db.execute(query, (movie_id, user_email), commit=True)
             message = "You have successfully liked the movie!"
         except Exception as e:
