@@ -2,9 +2,9 @@
 
 ## Overview
 This project is a simple web application similar to IMDb that interacts with a MySQL/MariaDB database. The application features a Flask-based UI that allows users to **view movie and actor details, like movies, and execute SQL queries**.
+The project is structured to learn SQL by implementing queries and database interactions manually.
 
 > **IMPORTANT**: Object Relational Model (ORM) based queries are **not allowed** for any task. **All queries must be written using raw SQL statements without any Python-based processing.**
-## Running the Project
 
 ---
 
