@@ -3,7 +3,7 @@
 ## Overview
 This project is a simple web application similar to IMDb that interacts with a MySQL/MariaDB database. The application features a Flask-based UI that allows users to **view movie and actor details, like movies, and execute SQL queries**.
 
-The project is structured to learn SQL by implementing queries and database interactions manually.
+The project is structured to **learn SQL** by implementing queries and database interactions manually.
 
 > **IMPORTANT**: Object Relational Model (ORM) based queries are **not allowed** for any task. **All queries must be written using raw SQL statements without any Python-based processing.**
 
@@ -15,7 +15,6 @@ The project is structured to learn SQL by implementing queries and database inte
 - **Flask** (for the web framework)
 - **PyMySQL** (for database connectivity)
 - **All dependencies from `requirements.txt`**
-'''mysql -u root -p < schema_initialization.sql'''
 
 ---
 
@@ -24,7 +23,6 @@ The project is structured to learn SQL by implementing queries and database inte
 ### **Step 1: Install and Configure MariaDB**
 1. **Installation**  
    > **NOTE**: If you have already set up MariaDB for Written Assignment 2, you may skip the first two sections (*Installation* and *Starting the MariaDB Server*).
-'''mysql -u root -p < data/data.sql'''
 
    Choose the appropriate installation method for your operating system:
     - **MacOS (Homebrew)**  
@@ -48,7 +46,6 @@ The project is structured to learn SQL by implementing queries and database inte
    ```
 
    *(For Windows, the service starts automatically after installation.)*
-'''pip install -r requirements.txt'''
 
 3. **Create a new database and user for the project**
    Open a terminal and start MariaDB:
@@ -60,7 +57,6 @@ The project is structured to learn SQL by implementing queries and database inte
    > **NOTE**: Below commands must be run in your MySQL shell inside terminal.
    ```sql
    CREATE DATABASE moviedb;
-'''python run.py'''
 
    CREATE USER 'imdb'@'localhost' IDENTIFIED BY 'cosi-127b';
 
