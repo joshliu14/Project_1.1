@@ -10,7 +10,9 @@ To run the project, download mariaDB according to the directions in [YourOwnIMDb
 
 Run:
 
-```mysql -u root -p```
+```
+mysql -u root -p
+```
 
 and then inside mariadb run:
 
@@ -26,22 +28,30 @@ FLUSH PRIVILEGES;
 
 Go to the root directory of this project and run the following command:
 
-```mysql -u root -p < schema_initialization.sql```
+```
+mysql -u root -p < schema_initialization.sql
+```
 
 This will create the database moviedb and populate it with the necessary tables.
 
 Then run:
 
-```mysql -u root -p < data/data.sql```
+```
+mysql -u root -p < data/data.sql
+```
 
 This will populate the database with the given data.
 
 Then install requirements:
 
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 Then run the application:
 
-```python run.py```
+```
+python run.py
+```
 
 The application will be running on http://127.0.0.1:5000/
