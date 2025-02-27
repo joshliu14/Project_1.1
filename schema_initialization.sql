@@ -1,5 +1,3 @@
-CREATE DATABASE moviedb;
-
 USE moviedb;
 
 CREATE TABLE  MotionPicture 
