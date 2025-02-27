@@ -39,7 +39,7 @@ FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE,
 CHECK (season_count >=1), 
 PRIMARY KEY (mpid));
 
-CREATE TABLE People 
+CREATE TABLE Actors 
 (id INT, 
 name VARCHAR(255),
 nationality VARCHAR(255),
@@ -52,7 +52,7 @@ CREATE TABLE Role
 pid INT, 
 role_name VARCHAR(255),
 FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE, 
-FOREIGN KEY (pid) REFERENCES People(id) ON DELETE CASCADE,
+FOREIGN KEY (pid) REFERENCES Actors(id) ON DELETE CASCADE,
 PRIMARY KEY (mpid, pid, role_name));
 
 CREATE TABLE Award
@@ -61,7 +61,7 @@ pid INT,
 award_name VARCHAR(255), 
 award_year YEAR,
 FOREIGN KEY (mpid) REFERENCES MotionPicture(id) ON DELETE CASCADE,
-FOREIGN KEY (pid) REFERENCES People(id) ON DELETE CASCADE,
+FOREIGN KEY (pid) REFERENCES Actors(id) ON DELETE CASCADE,
 PRIMARY KEY (mpid, pid, award_name, award_year));
 
 CREATE TABLE Genre
